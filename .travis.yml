@@ -2,4 +2,4 @@ language: c
 
 script: make test
 
-install: sudo apt-get check
+install: brew install check
