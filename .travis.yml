@@ -1,5 +1,4 @@
-script:
-	make test
+language: c
 
-install:
-	brew install check
+
+install: sudo apt-get check
