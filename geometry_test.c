@@ -145,30 +145,32 @@ START_TEST(test_2d_midpoint)
 }
 END_TEST
 
-START_TEST(test_2d_area_triangle) {
-	coord_2d_t a;
-	coord_2d_t b;
-	coord_2d_t c;
-		
-	a.x = b.x = c.x = 0;
-	a.y = b.y = c.y = 0;
-	ck_assert(coord_2d_area_triangle(&a, &b, &c) == 0);
-	
-	a.x = a.y = 15;
-	b.x = 25;
-	b.y = 30;
-	c.x = 35;
-	c.y = 15;
-	ck_assert(coord_2d_area_triangle(&a, &b, &c) == 150);
-	/*
-	a.x = 19;
-	a.y = 17;
-	b.x = 23;
-	b.y = 32;
-	c.x = 38;
-	c.y = 13;
-	ck_assert(coord_2d_area_triangle(&a, &b, &c) == 150.5);
-	*/
+START_TEST(test_2d_area_triangle)
+{
+    coord_2d_t a;
+    coord_2d_t b;
+    coord_2d_t c;
+
+    a.x = b.x = c.x = 0;
+    a.y = b.y = c.y = 0;
+    ck_assert(coord_2d_area_triangle(&a, &b, &c) == 0.0);
+
+    a.x = 15;
+    a.y = 15;
+    b.x = 22;
+    b.y = 33;
+    c.x = 38;
+    c.y = 17;
+    ck_assert(coord_2d_area_triangle(&a, &b, &c) == 200.0);
+
+    a.x = 13;
+    a.y = 7;
+    b.x = 22;
+    b.y = 33;
+    c.x = 39;
+    c.y = 28;
+    ck_assert(coord_2d_area_triangle(&a, &b, &c) == 243.5);
+
 }
 END_TEST
 
